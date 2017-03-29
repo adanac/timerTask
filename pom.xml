@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.adanac.study</groupId>
+  <artifactId>timerTask</artifactId>
+  <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>timerTask-common</module>
+      <module>timerTask-intf</module>
+      <module>timerTask-service</module>
+      <module>timerTask-web</module>
+    </modules>
+    <packaging>pom</packaging>
+
+  <name>timerTask</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <quartz.version>2.2.2</quartz.version>
+    <spring.version>4.2.4.RELEASE</spring.version>
+    <junit.version>4.12</junit.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>${quartz.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz-jobs</artifactId>
+      <version>${quartz.version}</version>
+    </dependency>
+  </dependencies>
+</project>
