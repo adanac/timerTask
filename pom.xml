@@ -6,7 +6,7 @@
   <artifactId>timerTask</artifactId>
   <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>timerTask-common</module>
+      <module>timerTask-common</module>
       <module>timerTask-intf</module>
       <module>timerTask-service</module>
       <module>timerTask-web</module>
@@ -19,7 +19,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <quartz.version>2.2.2</quartz.version>
-    <spring.version>4.2.4.RELEASE</spring.version>
+    <spring.version>4.3.0.RELEASE</spring.version>
+    <spring-context-support.version>3.2.4.RELEASE</spring-context-support.version>
+    <servlet-api.version>2.4</servlet-api.version>
+    <httpclient.version>4.3.1</httpclient.version>
+    <commons-collections.version>3.2.2</commons-collections.version>
+    <commons-lang.version>2.6</commons-lang.version>
     <junit.version>4.12</junit.version>
   </properties>
   <dependencies>

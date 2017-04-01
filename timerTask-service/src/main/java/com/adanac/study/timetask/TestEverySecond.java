@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  */
 @Component("taskJob")
 public class TestEverySecond {
-    @Scheduled(cron = "1/5 * * * * ?")
+    @Scheduled(cron = "0 1/10 * * * ?")
     public void testTask(){
         System.out.println(System.currentTimeMillis());
     }

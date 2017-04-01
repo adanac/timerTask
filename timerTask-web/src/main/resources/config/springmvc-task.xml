@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="job1" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="com.adanac.study.quartz.TestWorker1" />
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="timeout" value="0" />
+            </map>
+        </property>
+        <property name="durability" value="true"/>
+    </bean>
+    <bean name="job2" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="com.adanac.study.quartz.TestWorker2" />
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="timeout" value="0" />
+            </map>
+        </property>
+        <property name="durability" value="true"/>
+    </bean>
+
+    <!--配置触发器-->
+    <bean id="cronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="job2" />
+        <!-- 每2秒调度一次 -->
+        <property name="cronExpression" value="*/2 * * * * ?" />
+    </bean>
+    <bean id="cronTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="job1" />
+        <!--每1秒运行一次;-->
+        <property name="cronExpression" value="*/1 * * * * ?"/>
+    </bean>
+
+    <!--配置调度工厂-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger1" />
+                <ref bean="cronTrigger2" />
+            </list>
+        </property>
+    </bean>
+</beans>
