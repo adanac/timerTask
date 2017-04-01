@@ -7,4 +7,5 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 
     <context:property-placeholder location="classpath:conf/*.properties"/>
     <import resource="classpath:config/springmvc-task.xml"/>
+    <import resource="classpath:config/springmvc-task2.xml"/>
 </beans>
